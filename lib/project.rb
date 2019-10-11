@@ -8,15 +8,11 @@ class Project
     end
 
     def backers
-        ar=[]
-        ProjectBacker.all.each do |project_backer| 
-            if project_backer.project == self 
-                ar.push(project_backer.backer)
-            end
-            
+        ar=ProjectBacker.all.select { |project_backer|  project_backer.project == self }
+        i=0        
+        while ar[i] do 
+            arr=ar[i].backer
         end
-        ar
+        arr
     end
-
-
 end

@@ -13,16 +13,10 @@ class Backer
     def backed_projects
         ar=[]
         ProjectBacker.all.each do |project_backer| 
-           # puts project_backer.backer
-           
             if project_backer.backer == self 
                 ar.push(project_backer.project)
-                #binding.pry
-            end
-            
+            end  
         end
         ar
     end
-
-
 end
